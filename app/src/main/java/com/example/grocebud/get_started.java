@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +18,7 @@ public class get_started extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_started);
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -53,6 +55,11 @@ public class get_started extends AppCompatActivity {
             }
         });
     }
+    public void additem(View view){
+        Intent add = new Intent(get_started.this,add_item.class);
+        startActivity(add);
+    }
+  
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
