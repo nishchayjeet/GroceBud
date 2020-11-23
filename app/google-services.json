@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "111049028931",
+    "firebase_url": "https://grocebud-5ba5a.firebaseio.com",
+    "project_id": "grocebud-5ba5a",
+    "storage_bucket": "grocebud-5ba5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111049028931:android:84156bfa445ca6c5fc2bf6",
+        "android_client_info": {
+          "package_name": "com.example.grocebud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111049028931-269mmstdjtkrjrk3p4e9koj6b7vksk8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfRANnKK5cRFliM1cEDT5_elWwaDXlAsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111049028931-269mmstdjtkrjrk3p4e9koj6b7vksk8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
