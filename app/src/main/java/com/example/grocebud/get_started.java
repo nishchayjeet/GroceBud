@@ -33,12 +33,12 @@ public class get_started extends AppCompatActivity {
                         return true;
 
                     case R.id.nav_search:
-                        startActivity(new Intent(getApplicationContext(),myList.class));
+                        startActivity(new Intent(getApplicationContext(),search_item.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.nav_list:
-                        startActivity(new Intent(getApplicationContext(),about.class));
+                        startActivity(new Intent(getApplicationContext(),myList.class));
                         overridePendingTransition(0,0);
                         return true;
 
