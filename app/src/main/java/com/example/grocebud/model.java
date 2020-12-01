@@ -1,18 +1,16 @@
 package com.example.grocebud;
 
-public class Upload {
-    private String name;
-    private String asile;
-    public Upload(){
+public class model {
+    String name,asile;
+
+    model(){
 
     }
 
-    public Upload(String name, String asile) {
+    public model(String name, String asile) {
         this.name = name;
         this.asile = asile;
     }
-
-
 
     public String getName() {
         return name;

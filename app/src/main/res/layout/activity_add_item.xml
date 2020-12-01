@@ -75,30 +75,30 @@
         android:layout_width="223dp"
         android:layout_height="31dp"
         android:background="@android:drawable/divider_horizontal_textfield"
-        android:onClick="3"
         android:text="ADD ITEM"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.545" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
 
-    <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="254dp"
-        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:background="#FBFAFA"
+        app:itemIconTint="@android:color/black"
+
+        app:itemTextColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="1.0" >
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/menu_nav" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

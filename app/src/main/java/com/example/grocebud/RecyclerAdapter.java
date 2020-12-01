@@ -50,9 +50,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<com.example.grocebud.R
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.imageView);
-            textView = itemView.findViewById(R.id.textViewName);
-            rowCountTextView = itemView.findViewById(R.id.textviewID);
+            imageView = itemView.findViewById(R.id.img1);
+            textView = itemView.findViewById(R.id.name);
+            rowCountTextView = itemView.findViewById(R.id.asile);
 
             itemView.setOnClickListener(this);
 

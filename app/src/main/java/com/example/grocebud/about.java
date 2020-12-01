@@ -52,12 +52,12 @@ public class about extends AppCompatActivity {
                         return true;
 
                     case R.id.nav_search:
-                        startActivity(new Intent(getApplicationContext(), myList.class));
+                        startActivity(new Intent(getApplicationContext(), search_item.class));
                         overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.nav_list:
-                        startActivity(new Intent(getApplicationContext(), get_started.class));
+                        startActivity(new Intent(getApplicationContext(), mygrocery.class));
                         overridePendingTransition(0, 0);
                         return true;
 

@@ -26,6 +26,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Map;
 
 public class search_item extends AppCompatActivity {
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     EditText ed1;
     TextView tv1;
 
@@ -60,7 +62,7 @@ public class search_item extends AppCompatActivity {
                         return true;
 
                     case R.id.nav_list:
-                        startActivity(new Intent(getApplicationContext(),myList.class));
+                        startActivity(new Intent(getApplicationContext(),mygrocery.class));
                         overridePendingTransition(0,0);
                         return true;
 

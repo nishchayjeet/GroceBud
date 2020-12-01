@@ -32,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 public class add_item extends AppCompatActivity {
 
 
-    RecyclerView recyclerView;
+
     private Button BtnSave;
     private EditText inputAsile, InputName;
     FirebaseDatabase firebaseDatabase;
@@ -50,13 +50,12 @@ public class add_item extends AppCompatActivity {
         setTitle("Add New Item");
 
 
+
         InputName = findViewById(R.id.editText5);
         inputAsile = findViewById(R.id.editText7);
         BtnSave = findViewById(R.id.button_save);
         upload = new Upload();
-        recyclerView = findViewById(R.id.recyclerview_main);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         databaseReference = firebaseDatabase.getInstance().getReference().child("Data");
 
         BtnSave.setOnClickListener(new View.OnClickListener() {
@@ -70,76 +69,66 @@ public class add_item extends AppCompatActivity {
                 Toast.makeText(add_item.this,"Data Saved",Toast.LENGTH_SHORT).show();
             }
         });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-    }
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseRecyclerOptions<Upload>options = new FirebaseRecyclerOptions.Builder<Upload>().setQuery(databaseReference,Upload.class).build();
-
-        FirebaseRecyclerAdapter<Upload,ViewHolder>firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Upload, ViewHolder>(options) {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Upload model) {
-holder.setData(getApplicationContext(),model.getName(),model.getAsile() );
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
 
-holder.setonClickListener(new ViewHolder.clicklistner() {
-    @Override
-    public void onlongclick(View view, int position) {
-nm = getItem(position).getName();
-    showDeleteDataDiaglog(nm);
-    }
-});
+                    case R.id.nav_home:
+                        startActivity(new Intent(getApplicationContext(),get_started.class));
+                        overridePendingTransition(0,0);
 
-
-
-            }
+                    case R.id.nav_search:
+                        startActivity(new Intent(getApplicationContext(),search_item.class));
+                        overridePendingTransition(0,0);
 
 
-            @NonNull
-            @Override
-            public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row,parent,false);
-                return new ViewHolder(view);
-            }
-        };
-        firebaseRecyclerAdapter.startListening();
-        recyclerView.setAdapter(firebaseRecyclerAdapter);
+                    case R.id.nav_list:
 
-    }
-    private void showDeleteDataDiaglog(String nm){
-        AlertDialog.Builder builder = new AlertDialog.Builder(add_item.this);
-        builder.setTitle("Delete");
-        builder.setMessage("Are you sure you want to Delete this data");
-        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Query query = databaseReference.orderByChild("name").equalTo(nm);
-                query.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot ds : dataSnapshot.getChildren()){
-                            ds.getRef().removeValue();
-                        }
-                        Toast.makeText(add_item.this, "Data Deleted Successfully", Toast.LENGTH_SHORT).show();
-                    }
+                        startActivity(new Intent(getApplicationContext(),mygrocery.class));
+                        overridePendingTransition(0,0);
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
+                    case R.id.nav_about:
+                        startActivity(new Intent(getApplicationContext(),about.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+
+
+
+                }
+                return false;
             }
         });
-        builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
 
-            }
-        });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bottom_navigation, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+
+
+            case R.id.nav_settings:
+                FirebaseAuth.getInstance().signOut();
+                Intent Tologin = new Intent(add_item.this, login.class);
+                startActivity(Tologin);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
