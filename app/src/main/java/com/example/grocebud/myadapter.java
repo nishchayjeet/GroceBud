@@ -37,18 +37,18 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
     }
 
     static class myviewholder extends RecyclerView.ViewHolder
-     {
-         ImageView img;
-         TextView name,asile;
-         public myviewholder(@NonNull View itemView)
-         {
-             super(itemView);
-             img=(ImageView)itemView.findViewById(R.id.img1);
-             name=(TextView)itemView.findViewById(R.id.name);
-             asile=(TextView)itemView.findViewById(R.id.asile);
+    {
+        ImageView img;
+        TextView name,asile;
+        public myviewholder(@NonNull View itemView)
+        {
+            super(itemView);
+            img=(ImageView)itemView.findViewById(R.id.img1);
+            name=(TextView)itemView.findViewById(R.id.name);
+            asile=(TextView)itemView.findViewById(R.id.asile);
 
 
 
-         }
-     }
+        }
+    }
 }

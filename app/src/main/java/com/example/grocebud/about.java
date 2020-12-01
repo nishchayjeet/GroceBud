@@ -52,7 +52,7 @@ public class about extends AppCompatActivity {
                         return true;
 
                     case R.id.nav_search:
-                        startActivity(new Intent(getApplicationContext(), search_item.class));
+                        startActivity(new Intent(getApplicationContext(), storeselection.class));
                         overridePendingTransition(0, 0);
                         return true;
 

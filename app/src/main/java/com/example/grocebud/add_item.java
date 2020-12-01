@@ -83,7 +83,7 @@ public class add_item extends AppCompatActivity {
                         overridePendingTransition(0,0);
 
                     case R.id.nav_search:
-                        startActivity(new Intent(getApplicationContext(),search_item.class));
+                        startActivity(new Intent(getApplicationContext(),storeselection.class));
                         overridePendingTransition(0,0);
 
 
