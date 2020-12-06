@@ -33,7 +33,7 @@ public class get_started extends AppCompatActivity {
                         return true;
 
                     case R.id.nav_search:
-                        startActivity(new Intent(getApplicationContext(),storeselection.class));
+                        startActivity(new Intent(getApplicationContext(),PermissionsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 

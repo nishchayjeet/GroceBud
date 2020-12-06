@@ -13,9 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCt2O8w-ZFQSslbSFk3rWYMpWuUHxH68Cg"/>
-        <activity android:name=".storeselection"></activity>
+        <activity
+            android:name=".MapActivity"
+            android:label="@string/title_activity_map"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".PermissionsActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCt2O8w-ZFQSslbSFk3rWYMpWuUHxH68Cg" />
+
+        <activity android:name=".storeselection" />
         <activity android:name=".mygrocery" />
         <activity android:name=".myList" />
         <activity android:name=".search_item" />
